@@ -9,3 +9,6 @@ Break – Mean/Median/Thresholding:
 
 Break – Dilation/Erosion/Opening/Closing
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/FiltersAndMorphologicalOpsDemo/HEAD?filepath=InteractiveBreak_MorphologicalOps/InteractiveBreak_MorphologicalOps.ipynb)
+
+Break – Image Processing with Filter Kernels
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/FiltersAndMorphologicalOpsDemo/HEAD?filepath=InteractiveBreak_Kernels/InteractiveBreak_Kernels.ipynb)

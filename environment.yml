@@ -3,9 +3,9 @@ channels:
   - conda-forge
 dependencies:
   - python=3.7
-  - jupyter=1.0.0
-  - matplotlib=3.4.1
+  - jupyter
+  - matplotlib
   - numpy
-  - scikit-image=0.18.1
+  - scikit-image
   - itk
   - itkwidgets=0.32.0
