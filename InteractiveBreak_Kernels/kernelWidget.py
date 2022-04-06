@@ -90,7 +90,7 @@ class KernelWidget():
 
         if small_example:
             data_selection_options = ['random noise', 'vertical edges', 'horizontal edges']
-            default_value = 'random noise'
+            default_value = 'vertical edges'
         else:
             data_selection_options = ['cat', 'brick']
             default_value = 'cat'
@@ -119,14 +119,14 @@ class KernelWidget():
                 self.original_img = self.ax_left.imshow(self.image, cmap='gray')
             elif change['new'] == 'vertical edges':
                 self.image = np.zeros((5,5))
-                self.image[0,:] = 1
+                # self.image[0,:] = 1
                 self.image[2,:] = 1
-                self.image[4,:] = 1
+                # self.image[4,:] = 1
             elif change['new'] == 'horizontal edges':
                 self.image = np.zeros((5, 5))
-                self.image[:, 0] = 1
+                # self.image[:, 0] = 1
                 self.image[:, 2] = 1
-                self.image[:, 4] = 1
+                # self.image[:, 4] = 1
         else:
             if change['new'] == 'cat':
                 self.image = data.cat()[:, :, 0]
