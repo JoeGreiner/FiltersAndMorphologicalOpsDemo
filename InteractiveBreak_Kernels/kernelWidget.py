@@ -90,7 +90,7 @@ class KernelWidget():
             default_value = 'vertical edges'
         else:
             data_selection_options = ['cat', 'brick']
-            default_value = 'cat'
+            default_value = 'brick'
 
 
         self.filter_selection = widgets.Dropdown(options=data_selection_options,
