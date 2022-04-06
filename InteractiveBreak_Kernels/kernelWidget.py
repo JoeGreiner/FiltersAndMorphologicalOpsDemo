@@ -6,15 +6,12 @@ from skimage import data
 
 class KernelWidget():
     def __init__(self, kernel_min=-6, kernel_max=6, small_example=True):
-        # if not annotate_images:
-        #     self.image = data.cat()[:,:,0]
-        #     self.image = self.image.astype(np.float32)
-        # else:
         self.small_example = small_example
         if small_example:
-            self.image = (1+np.random.rand(5,5)*4).astype(np.int32)
+            self.image = np.ones((5, 5))
+            self.image[2, :] = 3
         else:
-            self.image = data.cat()[:,:,0]
+            self.image = data.brick()
             self.image = self.image.astype(np.float32)
 
         self.convolved_image = self.image
@@ -118,14 +115,14 @@ class KernelWidget():
                 self.image = (1+np.random.rand(5,5)*4).astype(np.int32)
                 self.original_img = self.ax_left.imshow(self.image, cmap='gray')
             elif change['new'] == 'vertical edges':
-                self.image = np.zeros((5,5))
+                self.image = np.ones((5,5))
                 # self.image[0,:] = 1
-                self.image[2,:] = 1
+                self.image[2,:] = 3
                 # self.image[4,:] = 1
             elif change['new'] == 'horizontal edges':
-                self.image = np.zeros((5, 5))
+                self.image = np.ones((5, 5))
                 # self.image[:, 0] = 1
-                self.image[:, 2] = 1
+                self.image[:, 2] = 3
                 # self.image[:, 4] = 1
         else:
             if change['new'] == 'cat':
