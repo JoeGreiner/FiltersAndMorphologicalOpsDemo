@@ -134,8 +134,8 @@ class KernelWidget():
 
 
         self.convolve()
-        self.update_image()
-
+        self.original_img = self.ax_left.imshow(self.image, cmap='gray')
+        self.img_obj = self.ax_right.imshow(self.convolved_image, cmap='gray')
 
 
 
