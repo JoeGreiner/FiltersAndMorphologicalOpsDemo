@@ -7,6 +7,9 @@ from ipywidgets import Checkbox
 
 class KernelWidget():
     def __init__(self, kernel_min=-8, kernel_max=8, small_example=True):
+        # close all old figures
+        plt.close("all")
+
         self.box_absolute = Checkbox(False, description='absolute value')
         self.box_absolute.observe(handler=self.convolve)
 
