@@ -9,6 +9,7 @@ dependencies:
   - scikit-image
   - itk
   - itkwidgets=0.32.0
+  - tqdm
   - rise
   - pip
   - pip:
