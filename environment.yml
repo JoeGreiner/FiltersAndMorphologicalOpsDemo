@@ -1,4 +1,4 @@
-name: LectureImageProcessing2021
+name: LectureImageProcessing2022
 channels:
   - conda-forge
 dependencies:
@@ -9,3 +9,9 @@ dependencies:
   - scikit-image
   - itk
   - itkwidgets=0.32.0
+  - tqdm
+  - rise
+  - pip
+  - pip:
+      - jupyter_contrib_nbextensions
+
