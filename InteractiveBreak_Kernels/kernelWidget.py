@@ -1,4 +1,5 @@
 import numpy as np
+from imageio import imread
 from ipywidgets import widgets
 import matplotlib.pyplot as plt
 from scipy import ndimage
@@ -94,7 +95,7 @@ class KernelWidget():
             data_selection_options = ['random noise', 'vertical line', 'horizontal line', 'vertical block', 'horizontal block', 'point']
             default_value_img = 'vertical line'
         else:
-            data_selection_options = ['cat', 'brick']
+            data_selection_options = ['cat', 'brick', 'cells']
             default_value_img = 'brick'
 
 
@@ -177,6 +178,8 @@ class KernelWidget():
                 self.image = data.cat()[:, :, 0]
             elif change['new'] == 'brick':
                 self.image = data.brick()
+            elif change['new'] == 'cells':
+                self.image = imread('images/atp_stimulus.tif')
 
         self.image = self.image.astype(np.float32)
 
