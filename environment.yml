@@ -10,8 +10,8 @@ dependencies:
   - itk
   - itkwidgets=0.32.0
   - tqdm
-  - rise
-  - pip
-  - pip:
-      - jupyter_contrib_nbextensions
+#  - rise
+#  - pip
+#  - pip:
+#      - jupyter_contrib_nbextensions
 
