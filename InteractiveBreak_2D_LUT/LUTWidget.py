@@ -1,6 +1,8 @@
+import copy
+
 import numpy as np
 from imageio import imread
-from ipywidgets import widgets
+from ipywidgets import widgets, Checkbox
 import matplotlib.pyplot as plt
 from skimage import data
 from skimage.color import rgb2gray
@@ -12,6 +14,8 @@ class LUT_2D_Widget():
         plt.close("all")
         self.indicator_scale_length = indicator_scale_length
 
+        self.over_color = [255/255, 20/255, 147/255]
+        self.under_color = [255/255,255/255,0/255]
 
         self.axes = plt.figure(figsize=(9, 6), constrained_layout=True).subplot_mosaic(
             """
@@ -37,7 +41,7 @@ class LUT_2D_Widget():
         plt.sca(self.ax_bottom_right)
         self.image = data.cat()[:, :, 0]
         self.image_obj = plt.imshow(self.image, vmin=0, vmax=255)
-        self.colorbar = plt.colorbar(extend='max')
+        self.colorbar = plt.colorbar(extend='both')
         self.ax_bottom_right.xaxis.set_visible(False)
         self.ax_bottom_right.yaxis.set_visible(False)
         plt.title('Image With Applied LUT')
@@ -46,6 +50,10 @@ class LUT_2D_Widget():
         plt.hist(self.image.flatten(), bins=range(0, 255 + 1, 1), color='gray')
         self.minimum_line = plt.axvline(0, color='r')
         self.maximum_line = plt.axvline(255, color='r')
+        self.under_span = plt.axvspan(0, 0, facecolor=self.under_color)
+        self.over_span = plt.axvspan(255, 255, facecolor=self.over_color)
+        self.over_span.set_visible(False)
+        self.under_span.set_visible(False)
         plt.title('Data Histogram')
         plt.xlabel('Data Values')
         plt.ylabel('Count')
@@ -56,6 +64,9 @@ class LUT_2D_Widget():
         self.max_slider = widgets.IntSlider(description='Maximum:', min=1, max=255, value=255)
         self.min_slider.observe(handler=self.change_image_clim_prio_min)
         self.max_slider.observe(handler=self.change_image_clim_prio_max)
+
+        self.show_over_under = Checkbox(False, description='Show clipped/saturated pixels:')
+        self.show_over_under.observe(handler=self.change_over_under, names='value')
 
         data_selection_options = ['cat', 'WGA', 'DAPI']
         default_value_img = 'cat'
@@ -68,7 +79,7 @@ class LUT_2D_Widget():
 
 
         LUT_selection_options = sorted(['viridis', 'plasma', 'inferno', 'binary', 'gray',
-                      'hot', 'Spectral', 'hsv', 'rainbow'])
+                      'hot', 'Spectral'])
         default_LUT_value = 'gray'
         self.lut_dropdown = widgets.Dropdown(options=LUT_selection_options,
                                              description='LUT:',
@@ -76,7 +87,11 @@ class LUT_2D_Widget():
         self.lut_dropdown.observe(handler=self.change_cmap, names='value')
         self.change_cmap({'new':default_LUT_value})
 
-        self.vbox = widgets.VBox((self.image_selection_dropdown, self.lut_dropdown, self.min_slider, self.max_slider))
+
+
+        self.vbox = widgets.VBox((self.image_selection_dropdown, self.lut_dropdown,
+                                  self.min_slider, self.max_slider,
+                                  self.show_over_under))
 
         display(self.vbox)
 
@@ -90,12 +105,12 @@ class LUT_2D_Widget():
 
         self.ax_bottom_right.clear()
         self.image_obj = self.ax_bottom_right.imshow(self.image,
-                                                     cmap=self.lut_dropdown.value,
+                                                     cmap=self.colormap,
                                                      vmin=self.min_slider.value,
                                                      vmax=self.max_slider.value)
         self.colorbar.remove()
         plt.sca(self.ax_bottom_right)
-        self.colorbar = plt.colorbar(extend='max')
+        self.colorbar = plt.colorbar(extend='both')
         plt.title('Image With Applied LUT')
 
         self.ax_bottom_left.clear()
@@ -106,10 +121,42 @@ class LUT_2D_Widget():
         plt.title('Data Histogram')
         plt.xlabel('Data Values')
         plt.ylabel('Count')
+        self.change_over_under()
 
-    def change_cmap(self, change):
-        self.image_obj.set_cmap(change['new'])
-        self.indicator_image_obj.set_cmap(change['new'])
+    def change_over_under(self, change=None):
+        self.colormap = copy.copy(plt.get_cmap(self.colormap_string))
+        if self.show_over_under.value:
+            self.colormap.set_under(self.under_color)
+            self.colormap.set_over(self.over_color)
+            self.over_span.set_visible(True)
+            self.under_span.set_visible(True)
+            self.update_span_max()
+            self.update_span_min()
+        else:
+            self.over_span.set_visible(False)
+            self.under_span.set_visible(False)
+        self.update_cmap()
+
+
+    def change_cmap(self, change=None):
+        self.colormap_string = change['new']
+        self.colormap = copy.copy(plt.get_cmap(self.colormap_string))
+        self.change_over_under()
+        self.update_cmap()
+
+    def update_cmap(self):
+        self.image_obj.set_cmap(self.colormap)
+        self.indicator_image_obj.set_cmap(self.colormap)
+
+    def update_span_min(self):
+        new_min_value = self.min_slider.value
+        self.under_span.remove()
+        self.under_span = plt.axvspan(0, new_min_value, facecolor=self.under_color, alpha=0.2)
+
+    def update_span_max(self):
+        new_max_value = self.max_slider.value
+        self.over_span.remove()
+        self.over_span = plt.axvspan(new_max_value, 255, facecolor=self.over_color, alpha=0.2)
 
     def change_image_clim_prio_max(self, change=None):
         new_min_value = self.min_slider.value
@@ -121,6 +168,8 @@ class LUT_2D_Widget():
             self.indicator_image_obj.set_clim((new_min_value, new_max_value))
             self.minimum_line.set_data([new_min_value, new_min_value], [0, 1])
             self.maximum_line.set_data([new_max_value, new_max_value], [0, 1])
+            if self.show_over_under.value:
+                self.update_span_max()
 
     def change_image_clim_prio_min(self, change=None):
         new_min_value = self.min_slider.value
@@ -132,6 +181,9 @@ class LUT_2D_Widget():
             self.indicator_image_obj.set_clim((new_min_value, new_max_value))
             self.minimum_line.set_data([new_min_value, new_min_value], [0, 1])
             self.maximum_line.set_data([new_max_value, new_max_value], [0, 1])
+            if self.show_over_under.value:
+                self.update_span_min()
+
 
 
 
@@ -158,3 +210,4 @@ class LUT_2D_Widget():
                     image_text = str(np.round(image[i, j], 2))
                 text_annotation[i][j].set_text(image_text)
 
+# LUT_2D_Widget()
