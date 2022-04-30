@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from scipy import ndimage
 from skimage import data
 from ipywidgets import Checkbox
+from skimage.color import rgb2gray
+
 
 class KernelWidget():
     def __init__(self, kernel_min=-8, kernel_max=8, small_example=True, small_example_size=7):
@@ -175,7 +177,7 @@ class KernelWidget():
 
         else:
             if change['new'] == 'cat':
-                self.image = data.cat()[:, :, 0]
+                self.image = (255*rgb2gray(data.cat())).astype(np.uint8)
             elif change['new'] == 'brick':
                 self.image = data.brick()
             elif change['new'] == 'cells':
