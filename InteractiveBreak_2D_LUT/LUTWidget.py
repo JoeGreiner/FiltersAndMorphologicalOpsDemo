@@ -78,8 +78,7 @@ class LUT_2D_Widget():
         self.image_selection_dropdown.observe(self.create_image_data, names='value')
 
 
-        LUT_selection_options = sorted(['viridis', 'plasma', 'inferno', 'binary', 'gray',
-                      'hot', 'Spectral'])
+        LUT_selection_options = sorted(['viridis', 'inferno', 'binary', 'gray', 'hot'])
         default_LUT_value = 'gray'
         self.lut_dropdown = widgets.Dropdown(options=LUT_selection_options,
                                              description='LUT:',
