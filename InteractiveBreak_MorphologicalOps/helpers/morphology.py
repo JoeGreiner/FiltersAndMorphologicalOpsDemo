@@ -1,7 +1,12 @@
 import numpy as np
 from ipywidgets import widgets
 import matplotlib.pyplot as plt
-from itk import binary_dilate_image_filter,binary_morphological_closing_image_filter, binary_morphological_opening_image_filter, binary_erode_image_filter, GetArrayFromImage, GetImageFromArray, label_image_to_shape_label_map_filter
+from itk import binary_dilate_image_filter,\
+    binary_morphological_closing_image_filter,\
+    binary_morphological_opening_image_filter,\
+    binary_erode_image_filter,\
+    GetArrayFromImage,\
+    GetImageFromArray
 
 
 class OpenCloseWidget():
