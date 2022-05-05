@@ -6,8 +6,17 @@ Python Cheat Sheet:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain)  [PDF](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/JoeGreiner/FiltersAndMorphologicalOpsDemo/main/Python_CheatSheet/python_cheat_sheet.pdf
 )
 
+Exercise - A Lot of Dogs:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_A_Lot_Of_Dogs/Exercise_A_Lot_Of_Dogs.ipynb%26branch%3Dmain)
+
+
+Exercise - Time Series Analysis:
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_TimeSeriesAnalysis/Exercise_TimeSeriesAnalysis.ipynb%26branch%3Dmain)
+
+
 Exercise - 3D LUT:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_3D_LUT/Exercise_3D_LUT.ipynb%26branch%3Dmain)
+
 
 Exercise - Arrays:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_Arrays%252FExercise_Arrays.ipynb%26branch%3Dmain)
