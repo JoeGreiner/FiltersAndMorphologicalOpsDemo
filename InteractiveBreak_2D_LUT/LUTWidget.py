@@ -17,7 +17,8 @@ class LUT_2D_Widget():
         self.over_color = [255/255, 20/255, 147/255]
         self.under_color = [255/255,255/255,0/255]
 
-        self.axes = plt.figure(figsize=(9, 6), constrained_layout=True).subplot_mosaic(
+        self.figure = plt.figure(figsize=(9, 6), constrained_layout=True)
+        self.axes = self.figure.subplot_mosaic(
             """
             AAAAAAA
             CCCBBBB
@@ -146,6 +147,8 @@ class LUT_2D_Widget():
     def update_cmap(self):
         self.image_obj.set_cmap(self.colormap)
         self.indicator_image_obj.set_cmap(self.colormap)
+        self.figure.canvas.draw()
+        self.figure.canvas.flush_events()
 
     def update_span_min(self):
         new_min_value = self.min_slider.value
