@@ -7,17 +7,17 @@ import matplotlib.pyplot as plt
 from skimage import data
 from skimage.color import rgb2gray
 
-
 class LUT_2D_Widget():
     def __init__(self, indicator_scale_length = 15):
         # close all old figures
         plt.close("all")
+
         self.indicator_scale_length = indicator_scale_length
 
         self.over_color = [255/255, 20/255, 147/255]
         self.under_color = [255/255,255/255,0/255]
 
-        self.figure = plt.figure(figsize=(9, 6), constrained_layout=True)
+        self.figure = plt.figure(figsize=(9, 5), constrained_layout=True)
         self.axes = self.figure.subplot_mosaic(
             """
             AAAAAAA
@@ -147,8 +147,7 @@ class LUT_2D_Widget():
     def update_cmap(self):
         self.image_obj.set_cmap(self.colormap)
         self.indicator_image_obj.set_cmap(self.colormap)
-        self.figure.canvas.draw()
-        self.figure.canvas.flush_events()
+        self.figure.canvas.draw_idle()
 
     def update_span_min(self):
         new_min_value = self.min_slider.value
@@ -172,6 +171,7 @@ class LUT_2D_Widget():
             self.maximum_line.set_data([new_max_value, new_max_value], [0, 1])
             if self.show_over_under.value:
                 self.update_span_max()
+            self.figure.canvas.draw_idle()
 
     def change_image_clim_prio_min(self, change=None):
         new_min_value = self.min_slider.value
@@ -185,8 +185,7 @@ class LUT_2D_Widget():
             self.maximum_line.set_data([new_max_value, new_max_value], [0, 1])
             if self.show_over_under.value:
                 self.update_span_min()
-
-
+            self.figure.canvas.draw_idle()
 
 
     def create_text_annotation(self, image, axes):
@@ -212,4 +211,3 @@ class LUT_2D_Widget():
                     image_text = str(np.round(image[i, j], 2))
                 text_annotation[i][j].set_text(image_text)
 
-# LUT_2D_Widget()

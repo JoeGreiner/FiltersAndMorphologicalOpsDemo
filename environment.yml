@@ -2,7 +2,8 @@ name: LectureImageProcessing2022
 dependencies:
   - python=3.7
   - conda-forge::jupyter
-  - matplotlib>=3.5.0
+  - conda-forge::mamba
+  - matplotlib==3.5.2
   - numpy>=1.21.0
   - scikit-image>=0.19.0
   - conda-forge::itk>=5.2.0
