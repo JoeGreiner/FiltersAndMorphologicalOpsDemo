@@ -98,7 +98,7 @@ WarmUp – Paths & Syntax
 ### General
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html)
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicate, but it is <b>that</b> good!)
-* [A Hitchhiker`s Guide through the Bio-image Analysis Software Universe - List of Analysis Software](https://arxiv.org/abs/2204.07547?context=eess)
+* [A Hitchhiker`s Guide through the Bio-image Analysis Software Universe](https://arxiv.org/abs/2204.07547?context=eess)
 * [image.sc Forum](https://forum.image.sc/)
 * [biii.eu - List of Image Analysis Tools](https://biii.eu/)
 * [NEUBIAS Academy @ Home](http://eubias.org/NEUBIAS/training-schools/neubias-academy-home/)
@@ -112,7 +112,7 @@ WarmUp – Paths & Syntax
 * [Cellpose](https://cellpose.readthedocs.io/en/latest/)
 * [VesselVio - Vasculature Toolkit](https://jacobbumgarner.github.io/VesselVio/)
 * [CellProfiler](https://cellprofiler.org/)
-* [Knime](https://www.knime.com/)
+* [KNIME](https://www.knime.com/)
 
 ### Advanced Tools, But Great Tools!
 * [ITK](https://itk.org/)
