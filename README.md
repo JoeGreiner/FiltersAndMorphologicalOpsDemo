@@ -12,7 +12,7 @@ Joe
 
 ---
 
-## Table of Contents
+## 🏠 Table of Contents
 
    * [Notebook Previews/Binder Links](#notebook-previewsbinder-links)
       * [Whole Repo](#whole-repo)
@@ -30,15 +30,15 @@ Joe
   
   
 ---
-### Notebook Previews/Binder Links
+### Notebook Previews/Binder Links [🏠](#-table-of-contents)
 
-#### Whole Repo: 
+#### Whole Repo [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull?repo=https://github.com/JoeGreiner/FiltersAndMorphologicalOpsDemo)
 
 ---
 
-#### Python Cheat Sheet:
+#### Python Cheat Sheet [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain)  [PDF](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/JoeGreiner/FiltersAndMorphologicalOpsDemo/main/Python_CheatSheet/python_cheat_sheet.pdf)
 
@@ -46,77 +46,77 @@ Joe
 
 ---
 
-### Interactive Breaks
-#### Break – LUTs/Colormaps
+### Interactive Breaks [🏠](#-table-of-contents)
+#### Break – LUTs/Colormaps [🏠](#-table-of-contents)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_2D_LUT%252FInteractiveBreak_LUTs.ipynb%26branch%3Dmain%26branch%3Dmain)
 
 [![2D LUT](readme_helper/2D_LUT.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_2D_LUT%252FInteractiveBreak_LUTs.ipynb%26branch%3Dmain%26branch%3Dmain)
 
 ---
 
-#### Break – Mean/Median/Thresholding
+#### Break – Mean/Median/Thresholding [🏠](#-table-of-contents)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Filtering%252FInteractiveBreak_Filtering.ipynb%26branch%3Dmain)
 
 [![Rank](readme_helper/RankFilter.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Filtering%252FInteractiveBreak_Filtering.ipynb%26branch%3Dmain)
 
 ---
 
-#### Break – Dilation/Erosion/Opening/Closing
+#### Break – Dilation/Erosion/Opening/Closing [🏠](#-table-of-contents)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_MorphologicalOps%252FInteractiveBreak_MorphologicalOps.ipynb%26branch%3Dmain)
 
 [![Morph](readme_helper/MorphOps.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_MorphologicalOps%252FInteractiveBreak_MorphologicalOps.ipynb%26branch%3Dmain)
 
 ---
 
-#### Break – Image Processing with Filter Kernels
+#### Break – Image Processing with Filter Kernels [🏠](#-table-of-contents)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Kernels%252FInteractiveBreak_Kernels.ipynb%26branch%3Dmain)
 
 [![kernels](readme_helper/Kernels.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Kernels%252FInteractiveBreak_Kernels.ipynb%26branch%3Dmain)
 
 ---
 
-### Exercises
-Exercise - A Lot of Dogs:
+### Exercises [🏠](#-table-of-contents)
+Exercise - A Lot of Dogs [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_A_Lot_Of_Dogs/Exercise_A_Lot_Of_Dogs.ipynb%26branch%3Dmain)
 
 ---
 
-Exercise - Time Series Analysis:
+Exercise - Time Series Analysis [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_TimeSeriesAnalysis/Exercise_TimeSeriesAnalysis.ipynb%26branch%3Dmain)
 
 ---
 
-Exercise - 3D LUT:
+Exercise - 3D LUT [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_3D_LUT/Exercise_3D_LUT.ipynb%26branch%3Dmain)
 
 ---
 
-Exercise - Arrays:
+Exercise - Arrays [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_Arrays%252FExercise_Arrays.ipynb%26branch%3Dmain)
 
 ---
 
-Exercise - Install Modules & Matplotlib:
+Exercise - Install Modules & Matplotlib [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_InstallModulesMatplotlib/Exercise_InstallModulesMatplotlib.ipynb%26branch%3Dmain)
 
 ---
 
-### WarmUps
-WarmUp – Paths & Syntax
+### WarmUps [🏠](#-table-of-contents)
+WarmUp – Paths & Syntax [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree/FiltersAndMorphologicalOpsDemo/Warmup_PathsSyntax/WarmUp_PathsSyntax.ipynb%26branch%3Dmain)
 
 ---
 
-## Especially Recommended Further Resources
+## Especially Recommended Further Resources [🏠](#-table-of-contents)
 * Of course, this list is highly subjective, and by no means complete or exhaustive.
 
-### General
+### General [🏠](#-table-of-contents)
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html)
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicated, but it is <b>that</b> good!)
 * [A Hitchhiker`s Guide through the Bio-image Analysis Software Universe](https://arxiv.org/abs/2204.07547?context=eess)
@@ -126,7 +126,7 @@ WarmUp – Paths & Syntax
 * [Robert Haase's Youtube](https://www.youtube.com/channel/UC-hlwQ9Q4GS3rtv2EwSStAQ)
 
 
-### More Specific
+### More Specific [🏠](#-table-of-contents)
 * [ImageJ/FiJi Wiki](https://imagej.net/tutorials/)
 * [Ilastik](https://www.ilastik.org/documentation/index.html)
 * [Napari](https://napari.org/)
@@ -140,7 +140,7 @@ WarmUp – Paths & Syntax
 * [VesselVio - Vasculature Toolkit](https://jacobbumgarner.github.io/VesselVio/)
 * [ITK Snap](http://www.itksnap.org/pmwiki/pmwiki.php)
 
-### Advanced Tools, But Great Tools!
+### Advanced Tools, But Great Tools! [🏠](#-table-of-contents)
 * [ITK](https://itk.org/)
 * [VTK](https://vtk.org/)
 * [ParaView](https://www.paraview.org/)
