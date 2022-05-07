@@ -8,19 +8,24 @@ Python Cheat Sheet:
 
 
 
-Break – LUTs/Colormaps:
+
+
+### Breaks
+#### Break – LUTs/Colormaps
+[![2D LUT](readme_helper/2D_LUT.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_2D_LUT%252FInteractiveBreak_LUTs.ipynb%26branch%3Dmain%26branch%3Dmain)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_2D_LUT%252FInteractiveBreak_LUTs.ipynb%26branch%3Dmain%26branch%3Dmain)
 
-Break – Mean/Median/Thresholding:
+#### Break – Mean/Median/Thresholding
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Filtering%252FInteractiveBreak_Filtering.ipynb%26branch%3Dmain)
 
-Break – Dilation/Erosion/Opening/Closing
+#### Break – Dilation/Erosion/Opening/Closing
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_MorphologicalOps%252FInteractiveBreak_MorphologicalOps.ipynb%26branch%3Dmain)
 
-Break – Image Processing with Filter Kernels
+#### Break – Image Processing with Filter Kernels
+[![kernels](readme_helper/Kernels.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Kernels%252FInteractiveBreak_Kernels.ipynb%26branch%3Dmain)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_Kernels%252FInteractiveBreak_Kernels.ipynb%26branch%3Dmain)
 
-
+### Exercises
 Exercise - A Lot of Dogs:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_A_Lot_Of_Dogs/Exercise_A_Lot_Of_Dogs.ipynb%26branch%3Dmain)
 
@@ -39,5 +44,6 @@ Exercise - Arrays:
 Exercise - Install Modules & Matplotlib:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_InstallModulesMatplotlib/Exercise_InstallModulesMatplotlib.ipynb%26branch%3Dmain)
 
+### WarmUps
 WarmUp – Paths & Syntax
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree/FiltersAndMorphologicalOpsDemo/Warmup_PathsSyntax/WarmUp_PathsSyntax.ipynb%26branch%3Dmain)
