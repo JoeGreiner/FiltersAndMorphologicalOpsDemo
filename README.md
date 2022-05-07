@@ -138,6 +138,7 @@ WarmUp – Paths & Syntax
 * [KNIME](https://www.knime.com/)
 * [3D Slicer](https://www.slicer.org/)
 * [VesselVio - Vasculature Toolkit](https://jacobbumgarner.github.io/VesselVio/)
+* [ITK Snap](http://www.itksnap.org/pmwiki/pmwiki.php)
 
 ### Advanced Tools, But Great Tools!
 * [ITK](https://itk.org/)
