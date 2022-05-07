@@ -4,7 +4,7 @@ The <code>Python Cheat Sheet</code>, especially the Jupyter variant, is meant to
     
 If these things are helpful for you, please use them! Contributions, comments, mails, dm's etc. are very welcome. Let me know if these things help you :-)
 
-If you use the binder links a lot, please consider donating to [Binder](https://numfocus.salsalabs.org/donate-to-binder/index.html), they're amazing.
+If you use the Binder a lot, please consider [donating](https://numfocus.salsalabs.org/donate-to-binder/index.html) to them, they're amazing.
   
 Cheers,
 
