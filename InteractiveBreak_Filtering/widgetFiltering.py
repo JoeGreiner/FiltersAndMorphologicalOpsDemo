@@ -87,7 +87,7 @@ class RankFilterWidget():
                                             description='Filter:',
                                             value='None')
 
-        self.neighborhood_selection = widgets.Dropdown(options=['square', 'disk', 'star', 'diamond'],
+        self.neighborhood_selection = widgets.Dropdown(options=['square', 'disk', 'diamond'],
                                             description='Neighborhood Shape:',
                                             value='disk')
 
@@ -131,8 +131,8 @@ class RankFilterWidget():
             self.footprint = disk((neighborhood_size-1)//2)
         elif neighborhood_selection == 'square':
             self.footprint = square(neighborhood_size)
-        elif neighborhood_selection == 'star':
-            self.footprint = star(neighborhood_size)
+        # elif neighborhood_selection == 'star':
+        #     self.footprint = star(neighborhood_size)
         elif neighborhood_selection == 'diamond':
             self.footprint = diamond((neighborhood_size-1)//2)
 
