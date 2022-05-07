@@ -9,17 +9,35 @@ If you use the Binders a lot, please consider [donating](https://numfocus.salsal
 Cheers,
 
 Joe
+
+---
+
+## Table of contents
+
+   * [Notebook Previews/Binder Links](#notebook-previewsbinder-links)
+      * [Whole Repo](#whole-repo)
+      * [Python Cheat Sheet](#python-cheat-sheet)
+   * [Interactive Breaks](#interactive-breaks)
+      * [Break – LUTs/Colormaps](#break--lutscolormaps)
+      * [Break – Mean/Median/Thresholding](#break--meanmedianthresholding)
+      * [Break - Dilation/Erosion/Opening/Closing](#break--dilationerosionopeningclosing)
+      * [Break - Image Processing with Filter Kernels](#break--image-processing-with-filter-kernels)
+   * [Exercises](#exercises) 
+   * [Especially Recommended Further Resources](#especially-recommended-further-resources)
+
+
   
   
 ---
+### Notebook Previews/Binder Links
 
-Whole Repo: 
+#### Whole Repo: 
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull?repo=https://github.com/JoeGreiner/FiltersAndMorphologicalOpsDemo)
 
 ---
 
-Python Cheat Sheet:
+#### Python Cheat Sheet:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain)  [PDF](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/JoeGreiner/FiltersAndMorphologicalOpsDemo/main/Python_CheatSheet/python_cheat_sheet.pdf)
 
@@ -27,7 +45,7 @@ Python Cheat Sheet:
 
 ---
 
-### Breaks
+### Interactive Breaks
 #### Break – LUTs/Colormaps
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FInteractiveBreak_2D_LUT%252FInteractiveBreak_LUTs.ipynb%26branch%3Dmain%26branch%3Dmain)
 
