@@ -80,6 +80,8 @@ Exercise - A Lot of Dogs [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_A_Lot_Of_Dogs/Exercise_A_Lot_Of_Dogs.ipynb%26branch%3Dmain)
 
+[![dogs](readme_helper/dogs.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_A_Lot_Of_Dogs/Exercise_A_Lot_Of_Dogs.ipynb%26branch%3Dmain)
+
 ---
 
 Exercise - Time Series Analysis [🏠](#-table-of-contents)
@@ -91,6 +93,8 @@ Exercise - Time Series Analysis [🏠](#-table-of-contents)
 Exercise - 3D LUT [🏠](#-table-of-contents)
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_3D_LUT/Exercise_3D_LUT.ipynb%26branch%3Dmain)
+
+[![3D](readme_helper/3D.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FExercise_3D_LUT/Exercise_3D_LUT.ipynb%26branch%3Dmain)
 
 ---
 
