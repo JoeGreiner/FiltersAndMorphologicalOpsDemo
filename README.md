@@ -95,6 +95,8 @@ WarmUp – Paths & Syntax
 ---
 
 ## Especially Recommended Further Resources
+* Of course, this list is highly subjective, and by no means complete or exhaustive.
+
 ### General
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html)
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicate, but it is <b>that</b> good!)
@@ -103,6 +105,7 @@ WarmUp – Paths & Syntax
 * [biii.eu - List of Image Analysis Tools](https://biii.eu/)
 * [NEUBIAS Academy @ Home](http://eubias.org/NEUBIAS/training-schools/neubias-academy-home/)
 * [Robert Haase's Youtube](https://www.youtube.com/channel/UC-hlwQ9Q4GS3rtv2EwSStAQ)
+
 
 ### More Specific
 * [Ilastik](https://www.ilastik.org/documentation/index.html)
