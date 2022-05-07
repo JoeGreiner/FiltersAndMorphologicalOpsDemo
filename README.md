@@ -14,17 +14,17 @@ Joe
 
 ## 🏠 Table of Contents
 
-   * [Notebook Previews/Binder Links](#notebook-previewsbinder-links-)
-      * [Whole Repo](#whole-repo-)
-      * [Python Cheat Sheet](#python-cheat-sheet-)
-   * [Interactive Breaks](#interactive-breaks-)
-      * [Break – LUTs/Colormaps](#break--lutscolormaps-)
-      * [Break – Mean/Median/Thresholding](#break--meanmedianthresholding-)
-      * [Break - Dilation/Erosion/Opening/Closing](#break--dilationerosionopeningclosing-)
-      * [Break - Image Processing with Filter Kernels](#break--image-processing-with-filter-kernels-)
-   * [Exercises](#exercises-) 
-   * [WarmUps](#warmups-)
-   * [Especially Recommended Further Resources](#especially-recommended-further-resources-)
+* [Notebook Previews/Binder Links](#notebook-previewsbinder-links-)
+    * [Whole Repo](#whole-repo-)
+    * [Python Cheat Sheet](#python-cheat-sheet-)
+    * [Interactive Breaks](#interactive-breaks-)
+        * [Break – LUTs/Colormaps](#break--lutscolormaps-)
+        * [Break – Mean/Median/Thresholding](#break--meanmedianthresholding-)
+        * [Break - Dilation/Erosion/Opening/Closing](#break--dilationerosionopeningclosing-)
+        * [Break - Image Processing with Filter Kernels](#break--image-processing-with-filter-kernels-)
+    * [Exercises](#exercises-) 
+    * [WarmUps](#warmups-)
+* [Especially Recommended Further Resources](#especially-recommended-further-resources-)
 
 
   
