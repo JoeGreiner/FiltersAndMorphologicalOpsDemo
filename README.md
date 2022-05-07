@@ -117,7 +117,7 @@ WarmUp – Paths & Syntax
 
 ### General
 * [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html)
-* [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicate, but it is <b>that</b> good!)
+* [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicated, but it is <b>that</b> good!)
 * [A Hitchhiker`s Guide through the Bio-image Analysis Software Universe](https://arxiv.org/abs/2204.07547?context=eess)
 * [image.sc Forum](https://forum.image.sc/)
 * [biii.eu - List of Image Analysis Tools](https://biii.eu/)
