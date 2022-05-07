@@ -131,6 +131,7 @@ WarmUp – Paths & Syntax
 * [Ilastik](https://www.ilastik.org/documentation/index.html)
 * [Napari](https://napari.org/)
 * [QuPath](https://qupath.readthedocs.io/en/stable/)
+* [Icy](https://icy.bioimageanalysis.org/)
 * [scikit-image's Tutorial Gallery](https://scikit-image.org/docs/stable/auto_examples/index.html)
 * [cellpose](https://cellpose.readthedocs.io/en/latest/)
 * [CellProfiler](https://cellprofiler.org/)
