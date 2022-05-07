@@ -30,7 +30,7 @@ Joe
   
   
 ---
-### Notebook Previews/Binder Links
+### Notebook Previews/Binder Links [🏠](#-table-of-contents)
 
 #### Whole Repo [🏠](#-table-of-contents)
 
