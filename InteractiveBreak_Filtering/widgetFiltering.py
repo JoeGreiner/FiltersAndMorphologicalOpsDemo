@@ -1,146 +1,168 @@
 from IPython.core.display import display
+from matplotlib import pyplot as plt
 from skimage.data import shepp_logan_phantom
 from skimage.util import random_noise
 import numpy as np
 import ipywidgets as widgets
-from itkwidgets.widget_viewer import Viewer
-import itk
-from ipywidgets import interact, widgets
+from ipywidgets import  widgets
 
-def get_shepp_logan_phantom():
-    image = (shepp_logan_phantom()*255).astype(np.uint8)
-    return image
+from skimage.morphology import square, disk, star, diamond
+from skimage.filters.rank import mean, median
 
+# ideas:   change image,
+#           change noise
+#           more filters
+#           show math as with convolutions
 
+class RankFilterWidget():
+    def __init__(self):
 
+        plt.close("all")
 
-def compare_3_images(image1, image2, image3,
-                     link_cmap=False,
-                     **viewer_kwargs):
-    viewer1 = Viewer(image=image1, interpolation=False, annotations=False, ui_collapsed=True,
-                     cmap='Grayscale', **viewer_kwargs)
-    viewer2 = Viewer(image=image2, interpolation=False, annotations=False, ui_collapsed=True,
-                     cmap='Grayscale', **viewer_kwargs)
-    viewer3 = Viewer(image=image3, interpolation=False, annotations=False, ui_collapsed=True,
-                     cmap='Grayscale', **viewer_kwargs)
+        self.phantom = (shepp_logan_phantom()*255).astype(np.uint8)
+        self.noisy_phantom = self.corrupt(self.phantom)
 
-    widgets.jslink((viewer1, 'mode'), (viewer2, 'mode'))
-    widgets.jslink((viewer1, 'camera'), (viewer2, 'camera'))
-    widgets.jslink((viewer1, 'roi'), (viewer2, 'roi'))
-    widgets.jslink((viewer1, 'rotate'), (viewer2, 'rotate'))
-    widgets.jslink((viewer1, 'annotations'), (viewer2, 'annotations'))
+        self.filtered_image = self.noisy_phantom.copy()
+        self.thresholded_image = np.zeros_like(self.noisy_phantom, dtype=bool)
 
-    widgets.jslink((viewer1, 'mode'), (viewer3, 'mode'))
-    widgets.jslink((viewer1, 'camera'), (viewer3, 'camera'))
-    widgets.jslink((viewer1, 'roi'), (viewer3, 'roi'))
-    widgets.jslink((viewer1, 'rotate'), (viewer3, 'rotate'))
-    widgets.jslink((viewer1, 'annotations'), (viewer3, 'annotations'))
+        self.footprint = np.zeros(shape=(3,3))
 
-    link_widgets = []
-    link_widgets.append(widgets.Label('Link:'))
+        self.figure = plt.figure(figsize=(9, 5), constrained_layout=True)
+        self.axes = self.figure.subplot_mosaic(
+            """
+            ....d....
+            AAABBBCCC
+            AAABBBCCC
+            AAABBBCCC
+            """
+        )
 
-    class UpdateLink(object):
-        def __init__(self, enable, name):
-            self.link = None
-            self.link2 = None
-            self.name = name
-            if enable:
-                self.link = widgets.jslink((viewer1, name), (viewer2, name))
-                self.link2 = widgets.jslink((viewer1, name), (viewer3, name))
+        self.ax_left = self.axes['A']
+        self.ax_middle = self.axes['B']
+        self.ax_right = self.axes['C']
+        self.ax_footprint = self.axes['d']
 
-        def __call__(self, change):
-            if change.new:
-                self.link = widgets.jslink((viewer1, self.name), (viewer2, self.name))
-                self.link2 = widgets.jslink((viewer1, self.name), (viewer3, self.name))
-            else:
-                self.link.unlink()
-                self.link2.unlink()
+        plt.sca(self.ax_footprint)
+        self.footprint_img_obj = plt.imshow(self.footprint, cmap='gray', vmin=0, vmax=1, interpolation='none')
+        plt.title('Neighborhood')
 
-    update_cmap_link = UpdateLink(link_cmap, 'cmap')
+        plt.sca(self.ax_left)
+        self.input_img_obj = plt.imshow(self.noisy_phantom, cmap='gray', interpolation='None')
+        self.ax_left.xaxis.set_visible(False)
+        self.ax_left.yaxis.set_visible(False)
+        plt.title('Noisy Image')
 
-    viewer1_textbox = widgets.Label('Raw Data')
-    leftWidget = widgets.VBox([viewer1_textbox, viewer1])
-
-    viewer2_textbox = widgets.Label('Filtered Data')
-    centerWidget = widgets.VBox([viewer2_textbox, viewer2])
-
-    viewer3_textbox = widgets.Label('Thresholded Data')
-    rightWidget = widgets.VBox([viewer3_textbox, viewer3])
+        plt.sca(self.ax_middle)
+        self.filtered_img_obj =plt.imshow(self.filtered_image, cmap='gray', interpolation='None')
+        self.ax_middle.xaxis.set_visible(False)
+        self.ax_middle.yaxis.set_visible(False)
+        self.ax_middle.sharex(self.ax_left)
+        self.ax_middle.sharey(self.ax_left)
+        plt.title('Filtered Image')
 
 
-    widget = widgets.AppLayout(header=None,
-                               left_sidebar=leftWidget,
-                               center=centerWidget,
-                               right_sidebar=rightWidget,
-                               footer=None,
-                               pane_widths=[1, 1, 1],
-                               pane_heights=[1, 1, 1])
-    return (widget, viewer1, viewer2, viewer3)
+        plt.sca(self.ax_right)
+        self.threshold_img_obj = plt.imshow(self.thresholded_image, cmap='gray', vmin=0, vmax=1, interpolation='None')
+        self.ax_right.xaxis.set_visible(False)
+        self.ax_right.yaxis.set_visible(False)
+        self.ax_right.sharex(self.ax_left)
+        self.ax_right.sharey(self.ax_left)
+        plt.title('Thresholded Image')
 
 
 
+        plt.show()
 
 
-def corrup_salt_and_pepper(image):
-	image = (255*random_noise(image, mode='s&p', amount=0.35)).astype(np.uint8)
-	return image
+        # create UI
+        threshold_label = widgets.Label('Threshold Settings')
+        lower_threshold = widgets.IntSlider(description='Lower Threshold:', min=0, max=255, value=128,
+                                            width='auto',
+                                            style= {'description_width': 'initial'})
+        upper_threshold = widgets.IntSlider(description='Upper Threshold:', min=0, max=255, value=255,
+                                            width='auto',
+                                            style= {'description_width': 'initial'})
+
+        filter_selection = widgets.Dropdown(options=['Mean', 'Median', 'None'],
+                                            description='Filter:',
+                                            value='None')
+
+        self.neighborhood_selection = widgets.Dropdown(options=['square', 'disk', 'star', 'diamond'],
+                                            description='Neighborhood Shape:',
+                                            value='disk')
+
+        self.neighborhood_size = widgets.IntSlider(description='Neighborhood Size:', min=3, max=25, step=2,
+                                                   style= {'description_width': 'initial'})
+
+        threshold_box = widgets.VBox([threshold_label, lower_threshold, upper_threshold])
+        filter_box = widgets.VBox([filter_selection, self.neighborhood_selection, self.neighborhood_size])
+
+        ui = widgets.HBox([filter_box, threshold_box])
+
+        widgets.interactive_output(self.filter_and_threshold,
+                                   {'lower_threshold': lower_threshold,
+                                    'upper_threshold': upper_threshold,
+                                    'neighborhood_selection': self.neighborhood_selection,
+                                    'filter_selection': filter_selection,
+                                    'neighborhood_size': self.neighborhood_size})
+
+        display(ui)
 
 
 
-phantom = get_shepp_logan_phantom()
-noisy_phantom_salt_pepper = corrup_salt_and_pepper(phantom)
-noisy_phantom_salt_pepper_itk = itk.GetImageFromArray(noisy_phantom_salt_pepper)
+
+    def corrupt(self, image, mode='s&p', noise_amount=0.35):
+        image = (255*random_noise(image, mode=mode, amount=noise_amount)).astype(np.uint8)
+        return image
 
 
-# initialize viewer
-widget, viewer1, viewer2, viewer3 = compare_3_images(noisy_phantom_salt_pepper_itk,
-                                                     noisy_phantom_salt_pepper_itk,
-                                                     noisy_phantom_salt_pepper_itk)
-display(widget)
+    def filter_and_threshold(self,
+                             upper_threshold=255,
+                             lower_threshold=128,
+                             neighborhood_selection='disk',
+                             filter_selection='Mean Filter',
+                             neighborhood_size=3):
 
-# function that does the filtering
-def filter_and_threshold(upper_threshold=255,
-                         lower_threshold=128,
-                         filter_selection='mean',
-                         kernel_size=3):
-    # upper threshold cant be higher than the lower threshold
-    if upper_threshold < lower_threshold:
-        upper_threshold = lower_threshold
+        # upper threshold cant be higher than the lower threshold
+        if upper_threshold < lower_threshold:
+            upper_threshold = lower_threshold
 
-    if filter_selection == 'Median Filter':
-        viewer2.image = itk.median_image_filter(noisy_phantom_salt_pepper_itk, radius=kernel_size)
-    elif filter_selection == 'Mean Filter':
-        viewer2.image = itk.mean_image_filter(noisy_phantom_salt_pepper_itk, radius=kernel_size)
-    elif filter_selection == 'None':
-        viewer2.image = noisy_phantom_salt_pepper_itk
-    else:
-        raise ValueError('filter not implemented!')
+        if neighborhood_selection == 'disk':
+            self.footprint = disk((neighborhood_size-1)//2)
+        elif neighborhood_selection == 'square':
+            self.footprint = square(neighborhood_size)
+        elif neighborhood_selection == 'star':
+            self.footprint = star(neighborhood_size)
+        elif neighborhood_selection == 'diamond':
+            self.footprint = diamond((neighborhood_size-1)//2)
 
-    # thresholding using an itk filter
-    viewer3.image = itk.binary_threshold_image_filter(viewer2.image,
-                                                      lower_threshold=lower_threshold,
-                                                      upper_threshold=upper_threshold)
+        if filter_selection == 'Median':
+            self.filtered_image = median(self.noisy_phantom, footprint=self.footprint)
+        elif filter_selection == 'Mean':
+            self.filtered_image = mean(self.noisy_phantom, footprint=self.footprint)
+        elif filter_selection == 'None':
+            self.filtered_image = self.noisy_phantom.copy()
+        else:
+            raise ValueError('filter not implemented!')
 
+        # thresholding using an itk filter
+        self.thresholded_image = (self.filtered_image >= lower_threshold) & (self.filtered_image <= upper_threshold)
 
-# create UI
-threshold_label = widgets.Label('Threshold Settings')
-lower_threshold = widgets.IntSlider(description='Lower Threshold:', min=0, max=255, value=128)
-upper_threshold = widgets.IntSlider(description='Upper Threshold:', min=0, max=255, value=255)
+        self.update()
 
-filter_selection = widgets.Dropdown(options=['Mean Filter', 'Median Filter', 'None'],
-                                    description='Active Filter:',
-                                    value='None')
-kernel_size = widgets.IntSlider(description='Box Size:', min=3, max=10)
+    def update(self):
+        self.input_img_obj.set_data(self.noisy_phantom)
+        self.filtered_img_obj.set_data(self.filtered_image)
+        self.threshold_img_obj.set_data(self.thresholded_image)
+        self.footprint_img_obj.set_data(self.footprint)
 
-threshold_box = widgets.VBox([threshold_label, lower_threshold, upper_threshold])
-filter_box = widgets.VBox([filter_selection, kernel_size])
+        xlim = self.ax_footprint.get_xlim()
+        ylim = self.ax_footprint.get_ylim()
+        self.ax_footprint.set_xticks(xlim)
+        self.ax_footprint.set_yticks(ylim)
 
-ui = widgets.HBox([filter_box, threshold_box])
+        self.ax_footprint.set_xticklabels([0, self.neighborhood_size.value])
+        self.ax_footprint.set_yticklabels([0, self.neighborhood_size.value])
 
-widgets.interactive_output(filter_and_threshold,
-                           {'lower_threshold': lower_threshold,
-                            'upper_threshold': upper_threshold,
-                            'filter_selection': filter_selection,
-                            'kernel_size': kernel_size})
+        self.figure.canvas.draw_idle()
 
-display(ui)
