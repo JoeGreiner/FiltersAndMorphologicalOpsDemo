@@ -92,3 +92,31 @@ WarmUp – Paths & Syntax
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree/FiltersAndMorphologicalOpsDemo/Warmup_PathsSyntax/WarmUp_PathsSyntax.ipynb%26branch%3Dmain)
 
+---
+
+## Especially Recommended Further Resources
+### General
+* [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html)
+* [Pete Bankhead's "Introduction to Bioimage Analysis"](https://bioimagebook.github.io/README.html) (I know it's duplicate, but it is <b>that</b> good!)
+* [A Hitchhiker`s Guide through the Bio-image Analysis Software Universe - List of Analysis Software](https://arxiv.org/abs/2204.07547?context=eess)
+* [image.sc Forum](https://forum.image.sc/)
+* [biii.eu - List of Image Analysis Tools](https://biii.eu/)
+* [NEUBIAS Academy @ Home](http://eubias.org/NEUBIAS/training-schools/neubias-academy-home/)
+* [Robert Haase's Youtube](https://www.youtube.com/channel/UC-hlwQ9Q4GS3rtv2EwSStAQ)
+
+### More Specific
+* [Ilastik](https://www.ilastik.org/documentation/index.html)
+* [Napari](https://napari.org/)
+* [QuPath](https://qupath.readthedocs.io/en/stable/)
+* [Scikit-Image's Tutorial Gallery](https://scikit-image.org/docs/stable/auto_examples/index.html)
+* [Cellpose](https://cellpose.readthedocs.io/en/latest/)
+* [VesselVio - Vasculature Toolkit](https://jacobbumgarner.github.io/VesselVio/)
+* [CellProfiler](https://cellprofiler.org/)
+* [Knime](https://www.knime.com/)
+
+### Advanced Tools, But Great Tools!
+* [ITK](https://itk.org/)
+* [VTK](https://vtk.org/)
+* [ParaView](https://www.paraview.org/)
+* [Blender](https://www.blender.org/)
+* [3D Slicer](https://www.slicer.org/)
