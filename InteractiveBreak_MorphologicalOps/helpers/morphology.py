@@ -1,21 +1,21 @@
 import numpy as np
 from ipywidgets import widgets
 import matplotlib.pyplot as plt
-from itk import binary_dilate_image_filter,\
-    binary_morphological_closing_image_filter,\
-    binary_morphological_opening_image_filter,\
-    binary_erode_image_filter,\
-    GetArrayFromImage,\
-    GetImageFromArray
 
+from skimage.morphology import binary_closing, binary_erosion, binary_opening, binary_dilation, square
+
+# Future: Grayscale Dilation on real images
+# different footprints?
 
 class OpenCloseWidget():
-    def __init__(self):
+    def __init__(self, binary_value=1, footprint=square(3)):
         self.image = np.zeros((50,50), dtype=np.uint8)
-        self.image[13, 13] = 255
-        self.image[20:30, 20:23] = 255
-        self.image[30, 21] = 255
-        self.image[31:40, 20:23] = 255
+        self.binary_value = binary_value
+        self.footprint = footprint
+        self.image[13, 13] = binary_value
+        self.image[20:30, 20:23] = binary_value
+        self.image[30, 21] = binary_value
+        self.image[31:40, 20:23] = binary_value
         self.image_copy = self.image
 
 
@@ -31,17 +31,15 @@ class OpenCloseWidget():
 
         self.fig = plt.figure(figsize=(5,5))
         self.img_obj = plt.imshow(self.image, origin='lower')
-        plt.clim((0,255))
+        plt.clim((0,self.binary_value))
 
     def opening(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_morphological_opening_image_filter(itk_image))
+        self.image = binary_opening(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
 
     
     def closing(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_morphological_closing_image_filter(itk_image))
+        self.image = binary_closing(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
 
     def reset(self, event):
@@ -50,12 +48,14 @@ class OpenCloseWidget():
 
 
 class DilateErodeWidget():
-    def __init__(self):
+    def __init__(self, binary_value=1, footprint=square(3)):
         self.image = np.zeros((50,50), dtype=np.uint8)
-        self.image[13, 13] = 255
-        self.image[20:30, 20:23] = 255
-        self.image[30, 21] = 255
-        self.image[31:40, 20:23] = 255
+        self.binary_value = binary_value
+        self.footprint = footprint
+        self.image[13, 13] = binary_value
+        self.image[20:30, 20:23] = binary_value
+        self.image[30, 21] = binary_value
+        self.image[31:40, 20:23] = binary_value
         self.image_copy = self.image
 
 
@@ -71,16 +71,14 @@ class DilateErodeWidget():
 
         self.fig = plt.figure(figsize=(5,5))
         self.img_obj = plt.imshow(self.image, origin='lower')
-        plt.clim((0,255))
+        plt.clim((0,self.binary_value))
 
     def dilate(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_dilate_image_filter(itk_image))
+        self.image = binary_dilation(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
         
     def erode(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_erode_image_filter(itk_image))
+        self.image = binary_erosion(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
         
     def reset(self, event):
@@ -88,8 +86,9 @@ class DilateErodeWidget():
         self.img_obj.set_data(self.image_copy)
 
 class Drawer():
-    def __init__(self, paint_width=1, paint_value = 255, erase_value=0):
+    def __init__(self, paint_width=1, paint_value = 1, erase_value=0, footprint=square(3)):
         self.drawing = False
+        self.footprint = footprint
         self.paint_width = paint_width
         self.paint_value = paint_value
         self.erase_value = erase_value
@@ -111,7 +110,7 @@ class Drawer():
 
         self.fig = plt.figure(figsize=(5,5))
         self.img_obj = plt.imshow(self.image, origin='lower')
-        plt.clim((0,255))           
+        plt.clim((0,self.paint_value))
         plt.show()
          
         self.fig.canvas.mpl_connect('button_press_event', self.onclick)
@@ -122,28 +121,23 @@ class Drawer():
         return np.zeros((100,100), dtype=np.uint8)
 
     def dilate(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_dilate_image_filter(itk_image))
+        self.image = binary_dilation(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
-        
+
     def erode(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_erode_image_filter(itk_image))
+        self.image = binary_erosion(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
-    
+
     def reset(self, event):
         self.image = self.create_image()
         self.img_obj.set_data(self.image)
 
     def opening(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_morphological_opening_image_filter(itk_image))
+        self.image = binary_opening(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
 
-    
     def closing(self, event):
-        itk_image = GetImageFromArray(self.image)
-        self.image = GetArrayFromImage(binary_morphological_closing_image_filter(itk_image))
+        self.image = binary_closing(self.image, footprint=self.footprint)
         self.img_obj.set_data(self.image)
 
     def onclick(self, event):
