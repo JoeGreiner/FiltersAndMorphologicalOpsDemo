@@ -1,6 +1,6 @@
 This repository is a living collection of my resources to introduce/teach python and image analysis.
 
-The [Python Cheat Sheet](#python-cheat-sheet), especially the Jupyter variant, is meant to be extended by the learner. [Interactive Breaks](#interactive-breaks) are thought to explain/deepen concepts via widgets, often with a fun twist (or cute animals). [Exercises](#exercises)  will require some kind of coding. [WarmUps](#warmups) are exercises that try to reduce frustration, especially for coding beginners.
+The [Python Cheat Sheet](#python-cheat-sheet-), especially the Jupyter variant, is meant to be extended by the learner. [Interactive Breaks](#interactive-breaks-) are thought to explain/deepen concepts via widgets, often with a fun twist (or cute animals). [Exercises](#exercises-)  will require some kind of coding. [WarmUps](#warmups-) are exercises that try to reduce frustration, especially for coding beginners.
     
 If these things are helpful for you, please use them! Contributions, comments, mails, dm's etc. are very welcome. Let me know if these things help you :-)
 
