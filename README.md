@@ -149,3 +149,9 @@ WarmUp – Paths & Syntax [🏠](#-table-of-contents)
 * [VTK](https://vtk.org/)
 * [ParaView](https://www.paraview.org/)
 * [Blender](https://www.blender.org/)
+
+### Learning Git
+* [Oh my Git!](https://ohmygit.org/)
+* [Git Game by Brad Woods](https://git.bradwoods.io/)
+* [Learn Git branching](https://learngitbranching.js.org/)
+* [https://lennerd.github.io/](https://lennerd.github.io/)
