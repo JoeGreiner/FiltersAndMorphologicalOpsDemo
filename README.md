@@ -143,6 +143,7 @@ WarmUp – Paths & Syntax [🏠](#-table-of-contents)
 * [3D Slicer](https://www.slicer.org/)
 * [VesselVio - Vasculature Toolkit](https://jacobbumgarner.github.io/VesselVio/)
 * [ITK Snap](http://www.itksnap.org/pmwiki/pmwiki.php)
+* [CSBDeep (StarDist, CARE, DenoiSeg, Noise2Void)] (https://csbdeep.bioimagecomputing.com/)
 
 ### Advanced Tools, But Great Tools! [🏠](#-table-of-contents)
 * [ITK](https://itk.org/)
