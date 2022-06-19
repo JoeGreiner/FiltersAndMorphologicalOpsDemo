@@ -42,7 +42,8 @@ Joe
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain)  [PDF](https://docs.google.com/viewer?url=https://raw.githubusercontent.com/JoeGreiner/FiltersAndMorphologicalOpsDemo/main/Python_CheatSheet/python_cheat_sheet.pdf)
 
-[![CheattSheet](readme_helper/cheatsheet.gif)](https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain)
+[![CheattSheet](readme_helper/cheatsheet.gif)]
+<!-- (https://mybinder.org/v2/gh/JoeGreiner/Binder_ImageAnalysisSandbox/master?urlpath=git-pull%3Frepo%3Dhttps%253A%252F%252Fgithub.com%252FJoeGreiner%252FFiltersAndMorphologicalOpsDemo%26urlpath%3Dtree%252FFiltersAndMorphologicalOpsDemo%252FPython_CheatSheet/Python_CheatSheet.ipynb%26branch%3Dmain) -->
 
 ---
 
